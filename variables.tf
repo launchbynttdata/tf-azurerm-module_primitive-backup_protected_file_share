@@ -1,9 +1,3 @@
-variable "enabled" {
-  description = "Enable backup protection"
-  type        = bool
-  default     = true
-}
-
 variable "resource_group_name" {
   description = "Vault resource group"
   type        = string
