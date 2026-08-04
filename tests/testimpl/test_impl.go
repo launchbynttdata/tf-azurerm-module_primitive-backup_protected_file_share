@@ -35,3 +35,7 @@ func TestBackupProtectedFileShare(t *testing.T, ctx types.TestContext) {
 		assert.NotEmpty(t, protectedFileShareName)
 	})
 }
+
+func TestComposableReadonlyBackupProtectedFileShare(t *testing.T, ctx types.TestContext) {
+	TestBackupProtectedFileShare(t, ctx)
+}
