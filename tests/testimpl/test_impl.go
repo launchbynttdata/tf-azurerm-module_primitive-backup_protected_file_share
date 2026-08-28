@@ -1,6 +1,7 @@
 package testimpl
 
 import (
+	"context"
 	"testing"
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
@@ -12,21 +13,15 @@ func TestBackupProtectedFileShare(t *testing.T, ctx types.TestContext) {
 
 	t.Run("validateBackupProtectedFileShare", func(t *testing.T) {
 
-		resourceGroupName := terraform.Output(
-			t,
-			ctx.TerratestTerraformOptions(),
+		resourceGroupName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(),
 			"resource_group_name",
 		)
 
-		vaultName := terraform.Output(
-			t,
-			ctx.TerratestTerraformOptions(),
+		vaultName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(),
 			"recovery_services_vault_name",
 		)
 
-		protectedFileShareName := terraform.Output(
-			t,
-			ctx.TerratestTerraformOptions(),
+		protectedFileShareName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(),
 			"protected_file_share_name",
 		)
 

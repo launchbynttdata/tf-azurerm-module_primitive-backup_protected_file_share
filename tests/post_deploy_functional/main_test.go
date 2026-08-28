@@ -34,7 +34,7 @@ func TestBackupProtectedFileShareModule(t *testing.T) {
 		SetTestSpecificFlags(map[string]types.TestFlags{
 			"complete": {
 				"IS_TERRAFORM_IDEMPOTENT_APPLY": false,
-				"SKIP_TEST": true,
+				"SKIP_TEST":                     true,
 			},
 		}).
 		Build()
